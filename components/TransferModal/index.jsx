@@ -57,6 +57,23 @@ const [car,setCard] = useState(carId)
                 <Field
                   autoFocus
                   margin="dense"
+                  id="destination"
+                  label={
+                    (carId === 1 && "Toyota Corolla") ||
+                    (carId === 2 && "VW Passat") ||
+                    (carId === 3 && "Mercedes Vito") ||
+                    (carId === 4 && "Mercedes Sprinter")
+                  }
+                  type="text"
+                  fullWidth
+                  name="destination"
+                  variant="outlined"
+                  component={TextField}
+                  disabled
+                />
+                <Field
+                  autoFocus
+                  margin="dense"
                   id="name"
                   label="İsim"
                   type="text"
@@ -110,7 +127,6 @@ const [car,setCard] = useState(carId)
                   autoFocus
                   margin="dense"
                   id="date"
-                  label="Tarih"
                   type="date"
                   fullWidth
                   name="date"

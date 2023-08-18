@@ -33,10 +33,10 @@ console.log(patient)
 
   const columns = [
     { field: "id", headerName: "ID", width: 170 },
-    { field: "firstName", headerName: "Adı", width: 270 },
-    { field: "lastName", headerName: "Soyadı", width: 270 },
+    { field: "firstName", headerName: "Adı", width: 170 },
+    { field: "lastName", headerName: "Soyadı", width: 170 },
     { field: "phoneNumber", headerName: "Telefon", width: 170 },
-    { field: "age", headerName: "Yaş", type: "number", width: 270 },
+    { field: "age", headerName: "Yaş", type: "number", width: 170 },
     { field: "location", headerName: "Lokasyon", width: 170 },
     { field: "status", headerName: "Durum", width: 170 },
   ];
@@ -53,7 +53,7 @@ console.log(patient)
           columns={columns}
           initialState={{
             pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
+              paginationModel: { page: 0, pageSize: 10 },
             },
           }}
           pageSizeOptions={[5, 10]}

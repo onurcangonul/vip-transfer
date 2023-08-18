@@ -6,11 +6,11 @@ import VehicleDetail from '@/components/Ui/Cards/vehicle';
 const Dashboard = () => {
   return (
     <>
-      <Grid container gap={3}>
+      <Grid container gap={2}>
         <Grid item xs={12}>
           <CardUi />
         </Grid>
-        <VehicleDetail />
+        <VehicleDetail/>
         <UserList />
       </Grid>
     </>

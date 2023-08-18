@@ -1,4 +1,4 @@
-import { useState } from "react";
+import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -13,11 +13,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import Dashboard from "@/pages/dashboard";
+import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -62,7 +60,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
 }));
@@ -70,7 +67,7 @@ const navItems = ["Home", "About", "Contact"];
 
 const Sidebar = () => {
   const theme = useTheme();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -95,7 +92,7 @@ const Sidebar = () => {
             <MenuIcon />
           </IconButton>
 
-          <List sx={{ display: "flex" ,  }}>
+          <List sx={{ display: "flex" }}>
             {navItems.map((item) => (
               <ListItem key={item} disablePadding>
                 <ListItemButton sx={{ textAlign: "center" }}>
@@ -118,10 +115,9 @@ const Sidebar = () => {
         variant="persistent"
         anchor="left"
         open={open}
-          >
-              
-              <DrawerHeader>
-                  <h3>VIP Transfer</h3>
+      >
+        <DrawerHeader>
+          <h3>VIP Transfer</h3>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -131,23 +127,13 @@ const Sidebar = () => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
-          {["Dashboard","Transferler"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        
+            <Link href="/transfer">
+                Transfer
+              </Link>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-     <Dashboard/>
+        {/* <Dashboard /> */}
       </Main>
     </Box>
   );
