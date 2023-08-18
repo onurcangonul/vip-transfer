@@ -1,11 +1,18 @@
 import React from 'react'
 import UserList from '@/components/UserTable'
-import CardStatistics from '@/components/Ui/Cards'
+import CardUi from '@/components/Ui/Cards';
+import Grid from "@mui/material/Grid";
+import VehicleDetail from '@/components/Ui/Cards/vehicle';
 const Dashboard = () => {
   return (
     <>
-      <UserList />
-      <CardStatistics />
+      <Grid container gap={3}>
+        <Grid item xs={12}>
+          <CardUi />
+        </Grid>
+        <VehicleDetail />
+        <UserList />
+      </Grid>
     </>
   );
 }

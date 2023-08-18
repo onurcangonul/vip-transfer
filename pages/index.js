@@ -5,7 +5,6 @@ export default function Home() {
     <>
       <main>
         <Sidebar/>
-  
       </main>
     </>
   )

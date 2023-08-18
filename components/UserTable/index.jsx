@@ -1,24 +1,25 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "firstName", headerName: "First name", width: 130 },
-  { field: "lastName", headerName: "Last name", width: 130 },
+  { field: "id", headerName: "ID", width: 170 },
+  { field: "firstName", headerName: "First name", width: 270 },
+  { field: "lastName", headerName: "Last name", width: 270 },
   {
     field: "age",
     headerName: "Age",
     type: "number",
-    width: 90,
+    width: 270,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    field: "age",
+    headerName: "Age",
+    type: "number",
+    width: 270,
   },
 ];
 
@@ -36,18 +37,24 @@ const rows = [
 
 export default function DataTable() {
   return (
-    <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
+    <div style={{ height: 400, width: "100%", }}>
+      <Card>
+        <Typography variant="h6" sx={{ my: "20px", px: "10px" }}>
+          Transfer Bekleyen Müşteriler
+        </Typography>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+       
+      </Card>
     </div>
   );
 }
