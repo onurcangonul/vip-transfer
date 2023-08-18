@@ -21,6 +21,9 @@ const UserSchema = new mongoose.Schema(
         destination: {
             type: String,
         },
+        car: {
+            type: Number
+        }
        
     },
     { timestamps: true }

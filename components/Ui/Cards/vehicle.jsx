@@ -60,7 +60,7 @@ function VehicleDetail() {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                          <TransferForm/>
+                  <TransferForm carId={item.id}/>
                 </CardActions>
               </Card>
             </Grid>

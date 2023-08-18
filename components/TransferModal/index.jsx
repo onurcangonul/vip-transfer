@@ -8,9 +8,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 
-const TransferForm = () => {
-  const [open, setOpen] = useState(false);
-
+const TransferForm = ({carId}) => {
+const [open, setOpen] = useState(false);
+const [car,setCard] = useState(carId)
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -47,6 +47,7 @@ const TransferForm = () => {
             age: "",
             date: "",
             destination: "",
+            car: car,
           }}
           onSubmit={handleFormSubmit}
         >
@@ -82,12 +83,13 @@ const TransferForm = () => {
                 <Field
                   autoFocus
                   margin="dense"
-                  id="phone"
-                  label="Telefon Numarası"
+                  id="phoneNumber"
+                  label="Telefon"
                   type="number"
                   fullWidth
+                  variant="outlined"
+                  name="surname"
                   component={TextField}
-                  name="phoneNumber"
                   value={values.phoneNumber}
                   onChange={handleChange}
                 />
