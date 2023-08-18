@@ -14,8 +14,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Dashboard from "@/pages/dashboard";
 import Link from "next/link";
+
 
 const drawerWidth = 240;
 
@@ -66,6 +66,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const navItems = ["Home", "About", "Contact"];
 
 const Sidebar = () => {
+ 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 

@@ -1,10 +1,10 @@
 import { Box, Card, Container, Typography } from '@mui/material';
-import Sidebar from '@/components/Sidebar';
+import Dashboard from './dashboard';
 export default function Home() {
   return (
     <>
       <main>
-        <Sidebar/>
+        <Dashboard />
       </main>
     </>
   )
