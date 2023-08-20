@@ -1,11 +1,11 @@
-import Sidebar from "@/components/Sidebar";
+import Headers from"../components/Header"
 import { Box } from "@mui/material";
 const Layout = ({ children }) => {
     return (
         <>
-            <Sidebar />
+            <Headers />
             <main>
-                <Box sx={{display:"flex"}}>
+                <Box sx={{display:"flex" ,p:"20px"}}>
                     {children}
                 </Box>
             </main>

@@ -1,11 +1,12 @@
 import React from "react";
-import UserList from "@/components/UserTable";
+import TransferTable from "@/components/TransferList";
 import Grid from "@mui/material/Grid";
+
 const Transfer = () => {
   return (
     <>
       <Grid container gap={2}>
-        <UserList />
+        <TransferTable />
       </Grid>
     </>
   );

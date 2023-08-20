@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema(
+const PatientSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -15,18 +15,13 @@ const UserSchema = new mongoose.Schema(
         age: {
             type: String,
         },
-        date: {
-            type: String,
-        },
-        destination: {
-            type: String,
-        },
-        car: {
-            type: Number
+        
+        transfer: {
+            type: Boolean
         }
-       
+
     },
     { timestamps: true }
 );
 
-export default mongoose.models.User || mongoose.model("User", UserSchema);
+export default mongoose.models.Patient || mongoose.model("Patient", PatientSchema);

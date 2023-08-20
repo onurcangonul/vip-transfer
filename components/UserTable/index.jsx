@@ -10,7 +10,7 @@ export default function DataTable() {
  useEffect(() => {
    const getPatient = async () => {
      try {
-       const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users`);
+       const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/patients`);
        setPatient(res.data);
      } catch (err) {
        console.log(err);
@@ -19,34 +19,29 @@ export default function DataTable() {
    getPatient();
  }, [patient]);
 
- const rows = patient.map((person, index) => ({
+  const rows = patient.map((person, index) => ({
    id: index + 1,
    firstName: person.name,
    lastName: person.surname,
    phoneNumber: person.phoneNumber,
    age: person.age,
-   location: person.destination,
-   status: "Aktif"
  }));
-console.log(patient)
 
 
   const columns = [
     { field: "id", headerName: "ID", width: 170 },
-    { field: "firstName", headerName: "Adı", width: 170 },
-    { field: "lastName", headerName: "Soyadı", width: 170 },
-    { field: "phoneNumber", headerName: "Telefon", width: 170 },
-    { field: "age", headerName: "Yaş", type: "number", width: 170 },
-    { field: "location", headerName: "Lokasyon", width: 170 },
-    { field: "status", headerName: "Durum", width: 170 },
+    { field: "firstName", headerName: "Adı", width: 270 },
+    { field: "lastName", headerName: "Soyadı", width: 270 },
+    { field: "phoneNumber", headerName: "Telefon", width: 270 },
+    { field: "age", headerName: "Yaş", type: "number", width: 270 },
   ];
 
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ width: "100%" }}>
       <Card>
         <Typography variant="h6" sx={{ my: "20px", px: "10px" }}>
-          Transfer Bekleyen Müşteriler
+          Hastalar
         </Typography>
         <DataGrid
           rows={rows}

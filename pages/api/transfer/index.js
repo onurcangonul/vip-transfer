@@ -1,13 +1,13 @@
 import dbConnect from "@/util/dbConnect";
-import User from "@/models/User";
+import Transfer from "@/models/Transfer";
 const handler = async (req, res) => {
     await dbConnect();
     const { method } = req;
 
     if (method === "GET") {
         try {
-            const users = await User.find();
-            res.status(200).json(users);
+            const transfer = await Transfer.find();
+            res.status(200).json(transfer);
         } catch (err) {
             console.log(err);
         }
@@ -15,12 +15,13 @@ const handler = async (req, res) => {
 
     if (method === "POST") {
         try {
-            const newUser = await User.create(req.body);
-            res.status(200).json(newUser);
+            const newTransfer = await Transfer.create(req.body);
+            res.status(200).json(newTransfer);
         } catch (err) {
             console.log(err);
         }
     }
+   
 };
 
 export default handler;
